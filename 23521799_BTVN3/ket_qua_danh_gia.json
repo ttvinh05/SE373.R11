@@ -1,0 +1,444 @@
+[
+  {
+    "kich_ban": "s1_thuan_loi",
+    "mau": "react",
+    "dat": true,
+    "stop_type": "dat_muc_tieu",
+    "model_calls": 6,
+    "tool_calls": 6,
+    "lap_ke_hoach": 0,
+    "kiem_quyen": [],
+    "rang_buoc": "ĐẠT (không vi phạm ràng buộc dữ liệu)",
+    "ban_giao": null,
+    "cau_tra_loi": "Đã đặt vé VN214 mã 4XJ1, trạng thái confirmed, giá 1.480.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 07/10 lúc 08:15.",
+    "trace": [
+      "[V1] AI     search_flights({'di': 'SGN', 'den': 'DAD', 'ngay': '07/10'})",
+      "[V1] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\", \"matched\": 5, \"flights\": [{\"so_hieu\": \"VN122\", \"gio\": \"08:00\", \"gia\": 2310000, \"hoan\": false}, {\"so_hieu\": \"VJ604\", \"gio\": \"09:30\", \"gia\": 1850000, \"hoan\": false}, {\"so_hieu\": \"QH118\", \"gio\": \"10:15\", \"gia\": 1980000, \"hoan\": true}, {\"so_hieu\": \"VN214\", \"gio\": \"08:15\", \"gia\": 1480000, \"hoan\": true}, {\"so_hieu\": \"VJ210\", \"gio\": \"11:40\", \"gia\": 1690000, \"hoan\": false}]}",
+      "[V2] AI     check_seat({'so_hieu': 'VN214', 'ngay': '07/10'})",
+      "[V2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"con\": 4, \"gia\": 1480000, \"con_cho\": true}",
+      "[V3] AI     book_seat({'so_hieu': 'VN214', 'ngay': '07/10'})",
+      "[V3] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VN214\", \"gia\": 1480000, \"hoan\": true, \"trang_thai\": \"held\", \"paid\": false, \"ngay\": \"07/10\", \"gio\": \"08:15\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[V4] AI     pay({'ma_dat': '4XJ1', 'the': 'corp_card'})",
+      "[V4] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"trang_thai\": \"paid\", \"so_tien\": 1480000}",
+      "[V5] AI     get_booking({'ma_dat': '4XJ1'})",
+      "[V5] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VN214\", \"gia\": 1480000, \"hoan\": true, \"trang_thai\": \"confirmed\", \"paid\": true, \"ngay\": \"07/10\", \"gio\": \"08:15\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[V5] AI     Đã đặt vé VN214 mã 4XJ1, trạng thái confirmed, giá 1.480.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 07/10 lúc 08:15."
+    ]
+  },
+  {
+    "kich_ban": "s1_thuan_loi",
+    "mau": "plan",
+    "dat": true,
+    "stop_type": "dat_muc_tieu",
+    "model_calls": 1,
+    "tool_calls": 6,
+    "lap_ke_hoach": 0,
+    "kiem_quyen": [],
+    "rang_buoc": "ĐẠT (không vi phạm ràng buộc dữ liệu)",
+    "ban_giao": null,
+    "cau_tra_loi": "Đã đặt vé VN214 mã 4XJ1, trạng thái confirmed, giá 1.480.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 07/10 lúc 08:15.",
+    "trace": [
+      "[KẾ HOẠCH] search_flights → check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 1] search_flights({\"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 1] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\", \"matched\": 5, \"flights\": [{\"so_hieu\": \"VN122\", \"gio\": \"08:00\", \"gia\": 2310000, \"hoan\": false}, {\"so_hieu\": \"VJ604\", \"gio\": \"09:30\", \"gia\": 1850000, \"hoan\": false}, {\"so_hieu\": \"QH118\", \"gio\": \"10:15\", \"gia\": 1980000, \"hoan\": true}, {\"so_hieu\": \"VN214\", \"gio\": \"08:15\", \"gia\": 1480000, \"hoan\": true}, {\"so_hieu\": \"VJ210\", \"gio\": \"11:40\", \"gia\": 1690000, \"hoan\": false}]}",
+      "[BƯỚC 2] check_seat({\"so_hieu\": \"VN214\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"con\": 4, \"gia\": 1480000, \"con_cho\": true}",
+      "[BƯỚC 3] book_seat({\"so_hieu\": \"VN214\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 3] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VN214\", \"gia\": 1480000, \"hoan\": true, \"trang_thai\": \"held\", \"paid\": false, \"ngay\": \"07/10\", \"gio\": \"08:15\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[BƯỚC 4] pay({\"ma_dat\": \"4XJ1\", \"the\": \"corp_card\"})",
+      "[BƯỚC 4] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"trang_thai\": \"paid\", \"so_tien\": 1480000}",
+      "[BƯỚC 5] get_booking({\"ma_dat\": \"4XJ1\"})",
+      "[BƯỚC 5] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VN214\", \"gia\": 1480000, \"hoan\": true, \"trang_thai\": \"confirmed\", \"paid\": true, \"ngay\": \"07/10\", \"gio\": \"08:15\", \"di\": \"SGN\", \"den\": \"DAD\"}"
+    ]
+  },
+  {
+    "kich_ban": "s1_thuan_loi",
+    "mau": "lai",
+    "dat": true,
+    "stop_type": "dat_muc_tieu",
+    "model_calls": 1,
+    "tool_calls": 6,
+    "lap_ke_hoach": 0,
+    "kiem_quyen": [],
+    "rang_buoc": "ĐẠT (không vi phạm ràng buộc dữ liệu)",
+    "ban_giao": null,
+    "cau_tra_loi": "Đã đặt vé VN214 mã 4XJ1, trạng thái confirmed, giá 1.480.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 07/10 lúc 08:15.",
+    "trace": [
+      "[KẾ HOẠCH #1] search_flights → check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 1] search_flights({\"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 1] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\", \"matched\": 5, \"flights\": [{\"so_hieu\": \"VN122\", \"gio\": \"08:00\", \"gia\": 2310000, \"hoan\": false}, {\"so_hieu\": \"VJ604\", \"gio\": \"09:30\", \"gia\": 1850000, \"hoan\": false}, {\"so_hieu\": \"QH118\", \"gio\": \"10:15\", \"gia\": 1980000, \"hoan\": true}, {\"so_hieu\": \"VN214\", \"gio\": \"08:15\", \"gia\": 1480000, \"hoan\": true}, {\"so_hieu\": \"VJ210\", \"gio\": \"11:40\", \"gia\": 1690000, \"hoan\": false}]}",
+      "[BƯỚC 2] check_seat({\"so_hieu\": \"VN214\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"con\": 4, \"gia\": 1480000, \"con_cho\": true}",
+      "[BƯỚC 3] book_seat({\"so_hieu\": \"VN214\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 3] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VN214\", \"gia\": 1480000, \"hoan\": true, \"trang_thai\": \"held\", \"paid\": false, \"ngay\": \"07/10\", \"gio\": \"08:15\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[BƯỚC 4] pay({\"ma_dat\": \"4XJ1\", \"the\": \"corp_card\"})",
+      "[BƯỚC 4] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"trang_thai\": \"paid\", \"so_tien\": 1480000}",
+      "[BƯỚC 5] get_booking({\"ma_dat\": \"4XJ1\"})",
+      "[BƯỚC 5] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VN214\", \"gia\": 1480000, \"hoan\": true, \"trang_thai\": \"confirmed\", \"paid\": true, \"ngay\": \"07/10\", \"gio\": \"08:15\", \"di\": \"SGN\", \"den\": \"DAD\"}"
+    ]
+  },
+  {
+    "kich_ban": "s2_rao_can",
+    "mau": "react",
+    "dat": true,
+    "stop_type": "dat_muc_tieu",
+    "model_calls": 7,
+    "tool_calls": 7,
+    "lap_ke_hoach": 0,
+    "kiem_quyen": [
+      "book_seat({'so_hieu': 'VJ210', 'ngay': '07/10'}) — vé VJ210 KHÔNG hoàn, giá 1.690.000đ — vượt thẩm quyền tự quyết (hạn mức 1.500.000đ, vé không hoàn) → ĐỒNG Ý",
+      "pay({'ma_dat': '4XJ1', 'the': 'corp_card'}) — vé VJ210 KHÔNG hoàn, giá 1.690.000đ — vượt thẩm quyền tự quyết (hạn mức 1.500.000đ, vé không hoàn) → ĐỒNG Ý"
+    ],
+    "rang_buoc": "ĐẠT (không vi phạm ràng buộc dữ liệu)",
+    "ban_giao": null,
+    "cau_tra_loi": "Đã đặt vé VJ210 mã 4XJ1, trạng thái confirmed, giá 1.690.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 07/10 lúc 11:40.",
+    "trace": [
+      "[V1] AI     search_flights({'di': 'SGN', 'den': 'DAD', 'ngay': '07/10'})",
+      "[V1] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\", \"matched\": 5, \"flights\": [{\"so_hieu\": \"VN122\", \"gio\": \"08:00\", \"gia\": 2310000, \"hoan\": false}, {\"so_hieu\": \"VJ604\", \"gio\": \"09:30\", \"gia\": 1850000, \"hoan\": false}, {\"so_hieu\": \"QH118\", \"gio\": \"10:15\", \"gia\": 1980000, \"hoan\": true}, {\"so_hieu\": \"VN214\", \"gio\": \"08:15\", \"gia\": 1480000, \"hoan\": true}, {\"so_hieu\": \"VJ210\", \"gio\": \"11:40\", \"gia\": 1690000, \"hoan\": false}]}",
+      "[V2] AI     check_seat({'so_hieu': 'VN214', 'ngay': '07/10'})",
+      "[V2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"con\": 0, \"gia\": 1480000, \"con_cho\": false}",
+      "[V3] AI     check_seat({'so_hieu': 'VJ210', 'ngay': '07/10'})",
+      "[V3] Tool   {\"status\": \"ok\", \"so_hieu\": \"VJ210\", \"ngay\": \"07/10\", \"con\": 6, \"gia\": 1690000, \"con_cho\": true}",
+      "[V4] AI     book_seat({'so_hieu': 'VJ210', 'ngay': '07/10'})",
+      "[V4] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VJ210\", \"gia\": 1690000, \"hoan\": false, \"trang_thai\": \"held\", \"paid\": false, \"ngay\": \"07/10\", \"gio\": \"11:40\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[V5] AI     pay({'ma_dat': '4XJ1', 'the': 'corp_card'})",
+      "[V5] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"trang_thai\": \"paid\", \"so_tien\": 1690000}",
+      "[V6] AI     get_booking({'ma_dat': '4XJ1'})",
+      "[V6] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VJ210\", \"gia\": 1690000, \"hoan\": false, \"trang_thai\": \"confirmed\", \"paid\": true, \"ngay\": \"07/10\", \"gio\": \"11:40\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[V6] AI     Đã đặt vé VJ210 mã 4XJ1, trạng thái confirmed, giá 1.690.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 07/10 lúc 11:40."
+    ]
+  },
+  {
+    "kich_ban": "s2_rao_can",
+    "mau": "plan",
+    "dat": false,
+    "stop_type": "ke_hoach_loi_thoi",
+    "model_calls": 1,
+    "tool_calls": 2,
+    "lap_ke_hoach": 0,
+    "kiem_quyen": [],
+    "rang_buoc": null,
+    "ban_giao": {
+      "stop_reason": "KẾ HOẠCH LỖI THỜI · check_seat(VN214) cho thấy HẾT GHẾ nhưng kế hoạch vẫn định đặt",
+      "da_thu": [
+        "search_flights({'di': 'SGN', 'den': 'DAD', 'ngay': '07/10'})",
+        "check_seat({'so_hieu': 'VN214', 'ngay': '07/10'})"
+      ],
+      "trang_thai": {
+        "buoc": "book_seat",
+        "args": {
+          "so_hieu": "VN214",
+          "ngay": "07/10"
+        },
+        "ma_dat": null,
+        "trang_thai": null,
+        "paid": false,
+        "dat_cho": [],
+        "so_lan_goi_tool": 2,
+        "so_lan_goi_model": 1
+      },
+      "cau_hoi_cho_nguoi": "Lập lại kế hoạch hay dừng? (mẫu Plan-then-Execute không tự lập lại)"
+    },
+    "cau_tra_loi": "DỪNG BẤT THƯỜNG · KẾ HOẠCH LỖI THỜI · check_seat(VN214) cho thấy HẾT GHẾ nhưng kế hoạch vẫn định đặt\n  Đã thử          : search_flights({'di': 'SGN', 'den': 'DAD', 'ngay': '07/10'}) → check_seat({'so_hieu': 'VN214', 'ngay': '07/10'})\n  Trạng thái      : {'buoc': 'book_seat', 'args': {'so_hieu': 'VN214', 'ngay': '07/10'}, 'ma_dat': None, 'trang_thai': None, 'paid': False, 'dat_cho': [], 'so_lan_goi_tool': 2, 'so_lan_goi_model': 1}\n  Hỏi người dùng  : Lập lại kế hoạch hay dừng? (mẫu Plan-then-Execute không tự lập lại)",
+    "trace": [
+      "[KẾ HOẠCH] search_flights → check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 1] search_flights({\"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 1] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\", \"matched\": 5, \"flights\": [{\"so_hieu\": \"VN122\", \"gio\": \"08:00\", \"gia\": 2310000, \"hoan\": false}, {\"so_hieu\": \"VJ604\", \"gio\": \"09:30\", \"gia\": 1850000, \"hoan\": false}, {\"so_hieu\": \"QH118\", \"gio\": \"10:15\", \"gia\": 1980000, \"hoan\": true}, {\"so_hieu\": \"VN214\", \"gio\": \"08:15\", \"gia\": 1480000, \"hoan\": true}, {\"so_hieu\": \"VJ210\", \"gio\": \"11:40\", \"gia\": 1690000, \"hoan\": false}]}",
+      "[BƯỚC 2] check_seat({\"so_hieu\": \"VN214\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"con\": 0, \"gia\": 1480000, \"con_cho\": false}"
+    ]
+  },
+  {
+    "kich_ban": "s2_rao_can",
+    "mau": "lai",
+    "dat": true,
+    "stop_type": "dat_muc_tieu",
+    "model_calls": 2,
+    "tool_calls": 7,
+    "lap_ke_hoach": 1,
+    "kiem_quyen": [
+      "book_seat({'so_hieu': 'VJ210', 'ngay': '07/10'}) — vé VJ210 KHÔNG hoàn, giá 1.690.000đ — vượt thẩm quyền tự quyết (hạn mức 1.500.000đ, vé không hoàn) → ĐỒNG Ý",
+      "pay({'ma_dat': '4XJ1', 'the': 'corp_card'}) — vé VJ210 KHÔNG hoàn, giá 1.690.000đ — vượt thẩm quyền tự quyết (hạn mức 1.500.000đ, vé không hoàn) → ĐỒNG Ý"
+    ],
+    "rang_buoc": "ĐẠT (không vi phạm ràng buộc dữ liệu)",
+    "ban_giao": null,
+    "cau_tra_loi": "Đã đặt vé VJ210 mã 4XJ1, trạng thái confirmed, giá 1.690.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 07/10 lúc 11:40.",
+    "trace": [
+      "[KẾ HOẠCH #1] search_flights → check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 1] search_flights({\"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 1] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\", \"matched\": 5, \"flights\": [{\"so_hieu\": \"VN122\", \"gio\": \"08:00\", \"gia\": 2310000, \"hoan\": false}, {\"so_hieu\": \"VJ604\", \"gio\": \"09:30\", \"gia\": 1850000, \"hoan\": false}, {\"so_hieu\": \"QH118\", \"gio\": \"10:15\", \"gia\": 1980000, \"hoan\": true}, {\"so_hieu\": \"VN214\", \"gio\": \"08:15\", \"gia\": 1480000, \"hoan\": true}, {\"so_hieu\": \"VJ210\", \"gio\": \"11:40\", \"gia\": 1690000, \"hoan\": false}]}",
+      "[BƯỚC 2] check_seat({\"so_hieu\": \"VN214\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"con\": 0, \"gia\": 1480000, \"con_cho\": false}",
+      "[XÉT LẠI] KE_HOACH_LOI_THOI · check_seat(VN214) cho thấy HẾT GHẾ nhưng kế hoạch vẫn định đặt → lập lại kế hoạch",
+      "[KẾ HOẠCH #2] check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 3] check_seat({\"so_hieu\": \"VJ210\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 3] Tool   {\"status\": \"ok\", \"so_hieu\": \"VJ210\", \"ngay\": \"07/10\", \"con\": 6, \"gia\": 1690000, \"con_cho\": true}",
+      "[BƯỚC 4] book_seat({\"so_hieu\": \"VJ210\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 4] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VJ210\", \"gia\": 1690000, \"hoan\": false, \"trang_thai\": \"held\", \"paid\": false, \"ngay\": \"07/10\", \"gio\": \"11:40\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[BƯỚC 5] pay({\"ma_dat\": \"4XJ1\", \"the\": \"corp_card\"})",
+      "[BƯỚC 5] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"trang_thai\": \"paid\", \"so_tien\": 1690000}",
+      "[BƯỚC 6] get_booking({\"ma_dat\": \"4XJ1\"})",
+      "[BƯỚC 6] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VJ210\", \"gia\": 1690000, \"hoan\": false, \"trang_thai\": \"confirmed\", \"paid\": true, \"ngay\": \"07/10\", \"gio\": \"11:40\", \"di\": \"SGN\", \"den\": \"DAD\"}"
+    ]
+  },
+  {
+    "kich_ban": "s3_doi_huong",
+    "mau": "react",
+    "dat": true,
+    "stop_type": "dat_muc_tieu",
+    "model_calls": 10,
+    "tool_calls": 10,
+    "lap_ke_hoach": 0,
+    "kiem_quyen": [],
+    "rang_buoc": "ĐẠT (không vi phạm ràng buộc dữ liệu)",
+    "ban_giao": null,
+    "cau_tra_loi": "Đã đặt vé VN808 mã 4XJ1, trạng thái confirmed, giá 1.490.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 08/10 lúc 08:00.",
+    "trace": [
+      "[V1] AI     search_flights({'di': 'SGN', 'den': 'DAD', 'ngay': '07/10'})",
+      "[V1] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\", \"matched\": 5, \"flights\": [{\"so_hieu\": \"VN122\", \"gio\": \"08:00\", \"gia\": 2310000, \"hoan\": false}, {\"so_hieu\": \"VJ604\", \"gio\": \"09:30\", \"gia\": 1850000, \"hoan\": false}, {\"so_hieu\": \"QH118\", \"gio\": \"10:15\", \"gia\": 2050000, \"hoan\": true}, {\"so_hieu\": \"VN214\", \"gio\": \"08:15\", \"gia\": 1480000, \"hoan\": true}, {\"so_hieu\": \"VJ210\", \"gio\": \"11:40\", \"gia\": 1690000, \"hoan\": false}]}",
+      "[V2] AI     check_seat({'so_hieu': 'VN214', 'ngay': '07/10'})",
+      "[V2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"con\": 0, \"gia\": 1480000, \"con_cho\": false}",
+      "[V3] AI     check_seat({'so_hieu': 'VJ210', 'ngay': '07/10'})",
+      "[V3] Tool   {\"status\": \"ok\", \"so_hieu\": \"VJ210\", \"ngay\": \"07/10\", \"con\": 0, \"gia\": 1690000, \"con_cho\": false}",
+      "[V4] AI     check_seat({'so_hieu': 'VJ604', 'ngay': '07/10'})",
+      "[V4] Tool   {\"status\": \"ok\", \"so_hieu\": \"VJ604\", \"ngay\": \"07/10\", \"con\": 0, \"gia\": 1850000, \"con_cho\": false}",
+      "[V5] AI     search_flights({'di': 'SGN', 'den': 'DAD', 'ngay': '08/10'})",
+      "[V5] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"08/10\", \"matched\": 2, \"flights\": [{\"so_hieu\": \"VN808\", \"gio\": \"08:00\", \"gia\": 1490000, \"hoan\": true}, {\"so_hieu\": \"VJ809\", \"gio\": \"13:05\", \"gia\": 1200000, \"hoan\": false}]}",
+      "[V6] AI     check_seat({'so_hieu': 'VN808', 'ngay': '08/10'})",
+      "[V6] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN808\", \"ngay\": \"08/10\", \"con\": 7, \"gia\": 1490000, \"con_cho\": true}",
+      "[V7] AI     book_seat({'so_hieu': 'VN808', 'ngay': '08/10'})",
+      "[V7] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VN808\", \"gia\": 1490000, \"hoan\": true, \"trang_thai\": \"held\", \"paid\": false, \"ngay\": \"08/10\", \"gio\": \"08:00\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[V8] AI     pay({'ma_dat': '4XJ1', 'the': 'corp_card'})",
+      "[V8] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"trang_thai\": \"paid\", \"so_tien\": 1490000}",
+      "[V9] AI     get_booking({'ma_dat': '4XJ1'})",
+      "[V9] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VN808\", \"gia\": 1490000, \"hoan\": true, \"trang_thai\": \"confirmed\", \"paid\": true, \"ngay\": \"08/10\", \"gio\": \"08:00\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[V9] AI     Đã đặt vé VN808 mã 4XJ1, trạng thái confirmed, giá 1.490.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 08/10 lúc 08:00."
+    ]
+  },
+  {
+    "kich_ban": "s3_doi_huong",
+    "mau": "plan",
+    "dat": false,
+    "stop_type": "ke_hoach_loi_thoi",
+    "model_calls": 1,
+    "tool_calls": 2,
+    "lap_ke_hoach": 0,
+    "kiem_quyen": [],
+    "rang_buoc": null,
+    "ban_giao": {
+      "stop_reason": "KẾ HOẠCH LỖI THỜI · check_seat(VN214) cho thấy HẾT GHẾ nhưng kế hoạch vẫn định đặt",
+      "da_thu": [
+        "search_flights({'di': 'SGN', 'den': 'DAD', 'ngay': '07/10'})",
+        "check_seat({'so_hieu': 'VN214', 'ngay': '07/10'})"
+      ],
+      "trang_thai": {
+        "buoc": "book_seat",
+        "args": {
+          "so_hieu": "VN214",
+          "ngay": "07/10"
+        },
+        "ma_dat": null,
+        "trang_thai": null,
+        "paid": false,
+        "dat_cho": [],
+        "so_lan_goi_tool": 2,
+        "so_lan_goi_model": 1
+      },
+      "cau_hoi_cho_nguoi": "Lập lại kế hoạch hay dừng? (mẫu Plan-then-Execute không tự lập lại)"
+    },
+    "cau_tra_loi": "DỪNG BẤT THƯỜNG · KẾ HOẠCH LỖI THỜI · check_seat(VN214) cho thấy HẾT GHẾ nhưng kế hoạch vẫn định đặt\n  Đã thử          : search_flights({'di': 'SGN', 'den': 'DAD', 'ngay': '07/10'}) → check_seat({'so_hieu': 'VN214', 'ngay': '07/10'})\n  Trạng thái      : {'buoc': 'book_seat', 'args': {'so_hieu': 'VN214', 'ngay': '07/10'}, 'ma_dat': None, 'trang_thai': None, 'paid': False, 'dat_cho': [], 'so_lan_goi_tool': 2, 'so_lan_goi_model': 1}\n  Hỏi người dùng  : Lập lại kế hoạch hay dừng? (mẫu Plan-then-Execute không tự lập lại)",
+    "trace": [
+      "[KẾ HOẠCH] search_flights → check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 1] search_flights({\"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 1] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\", \"matched\": 5, \"flights\": [{\"so_hieu\": \"VN122\", \"gio\": \"08:00\", \"gia\": 2310000, \"hoan\": false}, {\"so_hieu\": \"VJ604\", \"gio\": \"09:30\", \"gia\": 1850000, \"hoan\": false}, {\"so_hieu\": \"QH118\", \"gio\": \"10:15\", \"gia\": 2050000, \"hoan\": true}, {\"so_hieu\": \"VN214\", \"gio\": \"08:15\", \"gia\": 1480000, \"hoan\": true}, {\"so_hieu\": \"VJ210\", \"gio\": \"11:40\", \"gia\": 1690000, \"hoan\": false}]}",
+      "[BƯỚC 2] check_seat({\"so_hieu\": \"VN214\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"con\": 0, \"gia\": 1480000, \"con_cho\": false}"
+    ]
+  },
+  {
+    "kich_ban": "s3_doi_huong",
+    "mau": "lai",
+    "dat": true,
+    "stop_type": "dat_muc_tieu",
+    "model_calls": 4,
+    "tool_calls": 10,
+    "lap_ke_hoach": 3,
+    "kiem_quyen": [],
+    "rang_buoc": "ĐẠT (không vi phạm ràng buộc dữ liệu)",
+    "ban_giao": null,
+    "cau_tra_loi": "Đã đặt vé VN808 mã 4XJ1, trạng thái confirmed, giá 1.490.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 08/10 lúc 08:00.",
+    "trace": [
+      "[KẾ HOẠCH #1] search_flights → check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 1] search_flights({\"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 1] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\", \"matched\": 5, \"flights\": [{\"so_hieu\": \"VN122\", \"gio\": \"08:00\", \"gia\": 2310000, \"hoan\": false}, {\"so_hieu\": \"VJ604\", \"gio\": \"09:30\", \"gia\": 1850000, \"hoan\": false}, {\"so_hieu\": \"QH118\", \"gio\": \"10:15\", \"gia\": 2050000, \"hoan\": true}, {\"so_hieu\": \"VN214\", \"gio\": \"08:15\", \"gia\": 1480000, \"hoan\": true}, {\"so_hieu\": \"VJ210\", \"gio\": \"11:40\", \"gia\": 1690000, \"hoan\": false}]}",
+      "[BƯỚC 2] check_seat({\"so_hieu\": \"VN214\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"con\": 0, \"gia\": 1480000, \"con_cho\": false}",
+      "[XÉT LẠI] KE_HOACH_LOI_THOI · check_seat(VN214) cho thấy HẾT GHẾ nhưng kế hoạch vẫn định đặt → lập lại kế hoạch",
+      "[KẾ HOẠCH #2] check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 3] check_seat({\"so_hieu\": \"VJ210\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 3] Tool   {\"status\": \"ok\", \"so_hieu\": \"VJ210\", \"ngay\": \"07/10\", \"con\": 0, \"gia\": 1690000, \"con_cho\": false}",
+      "[XÉT LẠI] KE_HOACH_LOI_THOI · check_seat(VJ210) cho thấy HẾT GHẾ nhưng kế hoạch vẫn định đặt → lập lại kế hoạch",
+      "[KẾ HOẠCH #3] check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 4] check_seat({\"so_hieu\": \"VJ604\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 4] Tool   {\"status\": \"ok\", \"so_hieu\": \"VJ604\", \"ngay\": \"07/10\", \"con\": 0, \"gia\": 1850000, \"con_cho\": false}",
+      "[XÉT LẠI] KE_HOACH_LOI_THOI · check_seat(VJ604) cho thấy HẾT GHẾ nhưng kế hoạch vẫn định đặt → lập lại kế hoạch",
+      "[KẾ HOẠCH #4] search_flights → check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 5] search_flights({\"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"08/10\"})",
+      "[BƯỚC 5] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"08/10\", \"matched\": 2, \"flights\": [{\"so_hieu\": \"VN808\", \"gio\": \"08:00\", \"gia\": 1490000, \"hoan\": true}, {\"so_hieu\": \"VJ809\", \"gio\": \"13:05\", \"gia\": 1200000, \"hoan\": false}]}",
+      "[BƯỚC 6] check_seat({\"so_hieu\": \"VN808\", \"ngay\": \"08/10\"})",
+      "[BƯỚC 6] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN808\", \"ngay\": \"08/10\", \"con\": 7, \"gia\": 1490000, \"con_cho\": true}",
+      "[BƯỚC 7] book_seat({\"so_hieu\": \"VN808\", \"ngay\": \"08/10\"})",
+      "[BƯỚC 7] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VN808\", \"gia\": 1490000, \"hoan\": true, \"trang_thai\": \"held\", \"paid\": false, \"ngay\": \"08/10\", \"gio\": \"08:00\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[BƯỚC 8] pay({\"ma_dat\": \"4XJ1\", \"the\": \"corp_card\"})",
+      "[BƯỚC 8] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"trang_thai\": \"paid\", \"so_tien\": 1490000}",
+      "[BƯỚC 9] get_booking({\"ma_dat\": \"4XJ1\"})",
+      "[BƯỚC 9] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VN808\", \"gia\": 1490000, \"hoan\": true, \"trang_thai\": \"confirmed\", \"paid\": true, \"ngay\": \"08/10\", \"gio\": \"08:00\", \"di\": \"SGN\", \"den\": \"DAD\"}"
+    ]
+  },
+  {
+    "kich_ban": "s4_cung_dau",
+    "mau": "react",
+    "dat": false,
+    "stop_type": "lap",
+    "model_calls": 3,
+    "tool_calls": 2,
+    "lap_ke_hoach": 0,
+    "kiem_quyen": [],
+    "rang_buoc": null,
+    "ban_giao": {
+      "stop_reason": "LOOP · 'check_seat' gọi 3 lần với cùng tham số trong 6 vòng gần nhất",
+      "da_thu": [
+        "check_seat({'so_hieu': 'VJ604', 'ngay': '07/10'})",
+        "check_seat({'so_hieu': 'VJ604', 'ngay': '07/10'})"
+      ],
+      "trang_thai": {
+        "so_quan_sat_ok": 2,
+        "ma_dat": null,
+        "trang_thai": null,
+        "paid": false,
+        "dat_cho": [],
+        "so_lan_goi_tool": 2,
+        "so_lan_goi_model": 3
+      },
+      "cau_hoi_cho_nguoi": "Agent đang lặp vô ích — tiếp tục, đổi chiến lược hay dừng?"
+    },
+    "cau_tra_loi": "DỪNG BẤT THƯỜNG · LOOP · 'check_seat' gọi 3 lần với cùng tham số trong 6 vòng gần nhất\n  Đã thử          : check_seat({'so_hieu': 'VJ604', 'ngay': '07/10'}) → check_seat({'so_hieu': 'VJ604', 'ngay': '07/10'})\n  Trạng thái      : {'so_quan_sat_ok': 2, 'ma_dat': None, 'trang_thai': None, 'paid': False, 'dat_cho': [], 'so_lan_goi_tool': 2, 'so_lan_goi_model': 3}\n  Hỏi người dùng  : Agent đang lặp vô ích — tiếp tục, đổi chiến lược hay dừng?",
+    "trace": [
+      "[V1] AI     check_seat({'so_hieu': 'VJ604', 'ngay': '07/10'})",
+      "[V1] Tool   {\"status\": \"ok\", \"so_hieu\": \"VJ604\", \"ngay\": \"07/10\", \"con\": 2, \"gia\": 1850000, \"con_cho\": true}",
+      "[V2] AI     check_seat({'so_hieu': 'VJ604', 'ngay': '07/10'})",
+      "[V2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VJ604\", \"ngay\": \"07/10\", \"con\": 2, \"gia\": 1850000, \"con_cho\": true}",
+      "[V3] AI     check_seat({'so_hieu': 'VJ604', 'ngay': '07/10'})",
+      "[V3] AI     DỪNG BẤT THƯỜNG · LOOP · 'check_seat' gọi 3 lần với cùng tham số trong 6 vòng gần nhất",
+      "[V3] AI       Đã thử          : check_seat({'so_hieu': 'VJ604', 'ngay': '07/10'}) → check_seat({'so_hieu': 'VJ604', 'ngay': '07/10'}) → check_seat({'so_hieu': 'VJ604', 'ngay': '07/10'})",
+      "[V3] AI       Trạng thái      : {'so_quan_sat_ok': 2}",
+      "[V3] AI       Hỏi người dùng  : Agent đang lặp vô ích — tiếp tục, đổi chiến lược hay dừng?"
+    ]
+  },
+  {
+    "kich_ban": "s5_mat_ghze_sau_kiem",
+    "mau": "react",
+    "dat": true,
+    "stop_type": "dat_muc_tieu",
+    "model_calls": 8,
+    "tool_calls": 8,
+    "lap_ke_hoach": 0,
+    "kiem_quyen": [
+      "book_seat({'so_hieu': 'VJ210', 'ngay': '07/10'}) — vé VJ210 KHÔNG hoàn, giá 1.690.000đ — vượt thẩm quyền tự quyết (hạn mức 1.500.000đ, vé không hoàn) → ĐỒNG Ý",
+      "pay({'ma_dat': '4XJ1', 'the': 'corp_card'}) — vé VJ210 KHÔNG hoàn, giá 1.690.000đ — vượt thẩm quyền tự quyết (hạn mức 1.500.000đ, vé không hoàn) → ĐỒNG Ý"
+    ],
+    "rang_buoc": "ĐẠT (không vi phạm ràng buộc dữ liệu)",
+    "ban_giao": null,
+    "cau_tra_loi": "Đã đặt vé VJ210 mã 4XJ1, trạng thái confirmed, giá 1.690.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 07/10 lúc 11:40.",
+    "trace": [
+      "[V1] AI     search_flights({'di': 'SGN', 'den': 'DAD', 'ngay': '07/10'})",
+      "[V1] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\", \"matched\": 5, \"flights\": [{\"so_hieu\": \"VN122\", \"gio\": \"08:00\", \"gia\": 2310000, \"hoan\": false}, {\"so_hieu\": \"VJ604\", \"gio\": \"09:30\", \"gia\": 1850000, \"hoan\": false}, {\"so_hieu\": \"QH118\", \"gio\": \"10:15\", \"gia\": 1980000, \"hoan\": true}, {\"so_hieu\": \"VN214\", \"gio\": \"08:15\", \"gia\": 1480000, \"hoan\": true}, {\"so_hieu\": \"VJ210\", \"gio\": \"11:40\", \"gia\": 1690000, \"hoan\": false}]}",
+      "[V2] AI     check_seat({'so_hieu': 'VN214', 'ngay': '07/10'})",
+      "[V2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"con\": 1, \"gia\": 1480000, \"con_cho\": true}",
+      "[V3] AI     book_seat({'so_hieu': 'VN214', 'ngay': '07/10'})",
+      "[V3] Tool   {\"status\": \"error\", \"error\": \"flight_full\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"hint\": \"Chọn chuyến khác còn ghế (check_seat để biết)\"}",
+      "[V4] AI     check_seat({'so_hieu': 'VJ210', 'ngay': '07/10'})",
+      "[V4] Tool   {\"status\": \"ok\", \"so_hieu\": \"VJ210\", \"ngay\": \"07/10\", \"con\": 6, \"gia\": 1690000, \"con_cho\": true}",
+      "[V5] AI     book_seat({'so_hieu': 'VJ210', 'ngay': '07/10'})",
+      "[V5] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VJ210\", \"gia\": 1690000, \"hoan\": false, \"trang_thai\": \"held\", \"paid\": false, \"ngay\": \"07/10\", \"gio\": \"11:40\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[V6] AI     pay({'ma_dat': '4XJ1', 'the': 'corp_card'})",
+      "[V6] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"trang_thai\": \"paid\", \"so_tien\": 1690000}",
+      "[V7] AI     get_booking({'ma_dat': '4XJ1'})",
+      "[V7] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VJ210\", \"gia\": 1690000, \"hoan\": false, \"trang_thai\": \"confirmed\", \"paid\": true, \"ngay\": \"07/10\", \"gio\": \"11:40\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[V7] AI     Đã đặt vé VJ210 mã 4XJ1, trạng thái confirmed, giá 1.690.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 07/10 lúc 11:40."
+    ]
+  },
+  {
+    "kich_ban": "s5_mat_ghze_sau_kiem",
+    "mau": "plan",
+    "dat": false,
+    "stop_type": "ke_hoach_loi_thoi",
+    "model_calls": 1,
+    "tool_calls": 3,
+    "lap_ke_hoach": 0,
+    "kiem_quyen": [],
+    "rang_buoc": null,
+    "ban_giao": {
+      "stop_reason": "KẾ HOẠCH LỖI THỜI · book_seat: flight_full",
+      "da_thu": [
+        "search_flights({'di': 'SGN', 'den': 'DAD', 'ngay': '07/10'})",
+        "check_seat({'so_hieu': 'VN214', 'ngay': '07/10'})",
+        "book_seat({'so_hieu': 'VN214', 'ngay': '07/10'})"
+      ],
+      "trang_thai": {
+        "ma_dat": null,
+        "trang_thai": null,
+        "paid": false,
+        "dat_cho": [],
+        "so_lan_goi_tool": 3,
+        "so_lan_goi_model": 1
+      },
+      "cau_hoi_cho_nguoi": "Lập lại kế hoạch hay dừng?"
+    },
+    "cau_tra_loi": "DỪNG BẤT THƯỜNG · KẾ HOẠCH LỖI THỜI · book_seat: flight_full\n  Đã thử          : search_flights({'di': 'SGN', 'den': 'DAD', 'ngay': '07/10'}) → check_seat({'so_hieu': 'VN214', 'ngay': '07/10'}) → book_seat({'so_hieu': 'VN214', 'ngay': '07/10'})\n  Trạng thái      : {'ma_dat': None, 'trang_thai': None, 'paid': False, 'dat_cho': [], 'so_lan_goi_tool': 3, 'so_lan_goi_model': 1}\n  Hỏi người dùng  : Lập lại kế hoạch hay dừng?",
+    "trace": [
+      "[KẾ HOẠCH] search_flights → check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 1] search_flights({\"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 1] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\", \"matched\": 5, \"flights\": [{\"so_hieu\": \"VN122\", \"gio\": \"08:00\", \"gia\": 2310000, \"hoan\": false}, {\"so_hieu\": \"VJ604\", \"gio\": \"09:30\", \"gia\": 1850000, \"hoan\": false}, {\"so_hieu\": \"QH118\", \"gio\": \"10:15\", \"gia\": 1980000, \"hoan\": true}, {\"so_hieu\": \"VN214\", \"gio\": \"08:15\", \"gia\": 1480000, \"hoan\": true}, {\"so_hieu\": \"VJ210\", \"gio\": \"11:40\", \"gia\": 1690000, \"hoan\": false}]}",
+      "[BƯỚC 2] check_seat({\"so_hieu\": \"VN214\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"con\": 1, \"gia\": 1480000, \"con_cho\": true}",
+      "[BƯỚC 3] book_seat({\"so_hieu\": \"VN214\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 3] Tool   {\"status\": \"error\", \"error\": \"flight_full\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"hint\": \"Chọn chuyến khác còn ghế (check_seat để biết)\"}"
+    ]
+  },
+  {
+    "kich_ban": "s5_mat_ghze_sau_kiem",
+    "mau": "lai",
+    "dat": true,
+    "stop_type": "dat_muc_tieu",
+    "model_calls": 2,
+    "tool_calls": 8,
+    "lap_ke_hoach": 1,
+    "kiem_quyen": [
+      "book_seat({'so_hieu': 'VJ210', 'ngay': '07/10'}) — vé VJ210 KHÔNG hoàn, giá 1.690.000đ — vượt thẩm quyền tự quyết (hạn mức 1.500.000đ, vé không hoàn) → ĐỒNG Ý",
+      "pay({'ma_dat': '4XJ1', 'the': 'corp_card'}) — vé VJ210 KHÔNG hoàn, giá 1.690.000đ — vượt thẩm quyền tự quyết (hạn mức 1.500.000đ, vé không hoàn) → ĐỒNG Ý"
+    ],
+    "rang_buoc": "ĐẠT (không vi phạm ràng buộc dữ liệu)",
+    "ban_giao": null,
+    "cau_tra_loi": "Đã đặt vé VJ210 mã 4XJ1, trạng thái confirmed, giá 1.690.000đ — thoả ràng buộc (SGN→DAD, trước 12:00, trần 2.000.000đ); chuyến bay ngày 07/10 lúc 11:40.",
+    "trace": [
+      "[KẾ HOẠCH #1] search_flights → check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 1] search_flights({\"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 1] Tool   {\"status\": \"ok\", \"di\": \"SGN\", \"den\": \"DAD\", \"ngay\": \"07/10\", \"matched\": 5, \"flights\": [{\"so_hieu\": \"VN122\", \"gio\": \"08:00\", \"gia\": 2310000, \"hoan\": false}, {\"so_hieu\": \"VJ604\", \"gio\": \"09:30\", \"gia\": 1850000, \"hoan\": false}, {\"so_hieu\": \"QH118\", \"gio\": \"10:15\", \"gia\": 1980000, \"hoan\": true}, {\"so_hieu\": \"VN214\", \"gio\": \"08:15\", \"gia\": 1480000, \"hoan\": true}, {\"so_hieu\": \"VJ210\", \"gio\": \"11:40\", \"gia\": 1690000, \"hoan\": false}]}",
+      "[BƯỚC 2] check_seat({\"so_hieu\": \"VN214\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 2] Tool   {\"status\": \"ok\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"con\": 1, \"gia\": 1480000, \"con_cho\": true}",
+      "[BƯỚC 3] book_seat({\"so_hieu\": \"VN214\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 3] Tool   {\"status\": \"error\", \"error\": \"flight_full\", \"so_hieu\": \"VN214\", \"ngay\": \"07/10\", \"hint\": \"Chọn chuyến khác còn ghế (check_seat để biết)\"}",
+      "[XÉT LẠI] TOOL_LOI · book_seat trả flight_full → lập lại kế hoạch",
+      "[KẾ HOẠCH #2] check_seat → book_seat → pay → get_booking",
+      "[BƯỚC 4] check_seat({\"so_hieu\": \"VJ210\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 4] Tool   {\"status\": \"ok\", \"so_hieu\": \"VJ210\", \"ngay\": \"07/10\", \"con\": 6, \"gia\": 1690000, \"con_cho\": true}",
+      "[BƯỚC 5] book_seat({\"so_hieu\": \"VJ210\", \"ngay\": \"07/10\"})",
+      "[BƯỚC 5] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VJ210\", \"gia\": 1690000, \"hoan\": false, \"trang_thai\": \"held\", \"paid\": false, \"ngay\": \"07/10\", \"gio\": \"11:40\", \"di\": \"SGN\", \"den\": \"DAD\"}",
+      "[BƯỚC 6] pay({\"ma_dat\": \"4XJ1\", \"the\": \"corp_card\"})",
+      "[BƯỚC 6] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"trang_thai\": \"paid\", \"so_tien\": 1690000}",
+      "[BƯỚC 7] get_booking({\"ma_dat\": \"4XJ1\"})",
+      "[BƯỚC 7] Tool   {\"status\": \"ok\", \"ma_dat\": \"4XJ1\", \"so_hieu\": \"VJ210\", \"gia\": 1690000, \"hoan\": false, \"trang_thai\": \"confirmed\", \"paid\": true, \"ngay\": \"07/10\", \"gio\": \"11:40\", \"di\": \"SGN\", \"den\": \"DAD\"}"
+    ]
+  }
+]

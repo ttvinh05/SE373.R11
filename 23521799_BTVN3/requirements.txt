@@ -1,0 +1,5 @@
+# Các phiên bản đã dùng để chạy ma trận và kiểm thử trên Python 3.12.
+# Model giả không cần API key; LangGraph được dùng trực tiếp ở ReAct.
+langchain==1.4.3
+langchain-core==1.6.6
+langgraph==1.2.13
