@@ -1,0 +1,8 @@
+[
+  {
+    "case": "python-bash",
+    "question": "Dùng Python qua Bash để tính tổng hours theo owner trong data/workload.csv. Không chỉnh sửa file đầu vào. Cho biết cách xử lý dòng lỗi và task_id trùng.",
+    "trace": "20261007-192217_578b4759_turn01_dad8c54f.jsonl",
+    "answer": "Đã thực hiện tính toán qua Python trên Bash mà không thay đổi file `data/workload.csv`.\n\n### 1. Kết quả tổng `hours` theo `owner`\n- **Lan**: 9h *(T01: 4h + T02: 5h)*\n- **Minh**: 3h *(T03: 3h)*\n\n---\n\n### 2. Cách xử lý dòng lỗi và `task_id` trùng\n- **`task_id` trùng lặp**:\n  - **Cách xử lý**: Dùng một tập hợp (`set`) để ghi nhận các `task_id` đã duyệt. Khi gặp `task_id` đã tồn tại, bỏ qua bản ghi xuất hiện sau để tránh cộng trùng giờ.\n  - **Dòng bị trùng**: Dòng 6 (`T02,Lan,5`) bị bỏ qua vì `T02` đã được tính ở dòng 3.\n\n- **Dòng lỗi dữ liệu**:\n  - **Giá trị `hours` không hợp lệ**: Thử ép kiểu sang số thực (`float`), nếu phát sinh lỗi (`ValueError`) thì bỏ qua dòng.\n    - *Dòng 5 (`T04,Minh,abc`)*: `hours` là chữ (`abc`) nên bị bỏ qua.\n  - **Thiếu thông tin `owner`**: Bỏ qua các dòng có trường `owner` để trống vì không thể gán giờ cho người phụ trách.\n    - *Dòng 7 (`T05,,2`)*: Không có tên người phụ trách nên bị bỏ qua."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "case": "threshold-8",
+    "question": "Kiểm tra data/workload.csv, người nào vượt 8 giờ? Ghi báo cáo vào output/workload.md.",
+    "trace": "20261007-192132_7ffce37c_turn01_9ca0d713.jsonl",
+    "answer": "Đã hoàn thành kiểm tra file `data/workload.csv` với ngưỡng **8.0 giờ**.\n\n### Kết quả tóm tắt:\n- **Người vượt 8 giờ:** **Lan** (tổng cộng **9.0 giờ** hợp lệ).\n- **Minh:** 3.0 giờ hợp lệ (không vượt ngưỡng).\n- **Dữ liệu lỗi bị loại bỏ:** 3 dòng (dòng 5: `hours` không hợp lệ; dòng 6: trùng lặp `task_id` T02; dòng 7: thiếu `owner`).\n\nBáo cáo chi tiết đã được ghi vào: **`output/workload.md`**."
+  },
+  {
+    "case": "threshold-9",
+    "question": "Kiểm tra data/workload.csv, người nào vượt 9 giờ? Ghi báo cáo vào output/workload-9.md.",
+    "trace": "20261007-192155_e4f7af24_turn01_116f6831.jsonl",
+    "answer": "Đã hoàn thành kiểm tra file `data/workload.csv` với ngưỡng 9.0 giờ và ghi báo cáo vào **`output/workload-9.md`**.\n\n### Tóm tắt kết quả:\n\n- **Người vượt ngưỡng (> 9.0 giờ):** **Không có ai** (Lan đạt đúng 9.0 giờ, bằng ngưỡng nên không tính là vượt; Minh đạt 3.0 giờ).\n- **Tổng giờ hợp lệ:**\n  - Lan: 9.0 giờ\n  - Minh: 3.0 giờ\n- **Chất lượng dữ liệu:**\n  - Tổng số dòng dữ liệu: 6 dòng (có 3 dòng hợp lệ được tính giờ).\n  - Có 3 dòng bị loại do lỗi:\n    - Dòng 5 (`T04`): `hours` không hợp lệ (`abc`).\n    - Dòng 6 (`T02`): Trùng lặp `task_id` đã xuất hiện ở dòng 3.\n    - Dòng 7 (`T05`): Thiếu thông tin `owner`."
+  },
+  {
+    "case": "missing-threshold",
+    "question": "Tính tổng giờ theo người trong data/workload.csv và xác định người quá tải.",
+    "trace": "20261007-192221_5709aa55_turn01_92a5f0b9.jsonl",
+    "answer": "Để xác định người quá tải, bạn vui lòng cung cấp ngưỡng số giờ làm việc tối đa (ngưỡng giờ cho phép, là một số không âm). \n\nSau khi có ngưỡng giờ từ bạn, tôi sẽ tiến hành kiểm tra file `data/workload.csv`, tính tổng giờ hợp lệ theo từng người và xác định danh sách người vượt quá ngưỡng."
+  },
+  {
+    "case": "missing-file",
+    "question": "Kiểm tra data/no-such-workload.csv, người nào vượt 8 giờ? Ghi báo cáo vào output/missing-file.md.",
+    "trace": "20261007-192230_9fb3b84d_turn01_173cf133.jsonl",
+    "answer": "Không thể phân tích dữ liệu do script báo lỗi:\n\n- **Chi tiết lỗi (`stderr`):** `ERROR: Không đọc được file data/no-such-workload.csv: No such file or directory` (exit code: 1).\n- File `data/no-such-workload.csv` không tồn tại trong workspace, vì vậy không thể xác định người nào vượt 8 giờ và không thể lập báo cáo tại `output/missing-file.md`.\n\n**Đề xuất cách xử lý:**\n1. Kiểm tra lại tên file và đường dẫn CSV cần kiểm tra trong thư mục `data/`.\n2. Cung cấp đường dẫn chính xác tới file dữ liệu để thực hiện kiểm tra và tạo báo cáo."
+  }
+]

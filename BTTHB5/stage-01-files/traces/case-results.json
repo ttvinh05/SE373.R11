@@ -1,0 +1,14 @@
+[
+  {
+    "case": "A",
+    "question": "Tôi mua ngày 28/09/2026, yêu cầu hoàn ngày 06/10/2026, chưa kích hoạt. Tôi có được hoàn không?",
+    "trace": "20261007-192417_bfe6fb52_turn01_2d1b4540.jsonl",
+    "answer": "Theo chính sách hoàn tiền của hệ thống, trường hợp của bạn **không được hoàn tiền**. \n\n**Lý do chi tiết:**\n- **Chính sách áp dụng:** Đơn hàng mua ngày **28/09/2026** (trước ngày 01/10/2026) thuộc phạm vi áp dụng của *Chính sách hoàn tiền trước tháng 10*.\n- **Thời hạn yêu cầu:** Chính sách này quy định thời hạn gửi yêu cầu hoàn tiền là trong vòng **7 ngày** kể từ ngày mua (hạn chót là ngày 05/10/2026).\n- **Thời điểm yêu cầu:** Bạn gửi yêu cầu vào ngày **06/10/2026** (sau 8 ngày), do đó đã quá thời hạn quy định dù sản phẩm chưa kích hoạt."
+  },
+  {
+    "case": "B",
+    "question": "Tôi mua ngày 02/10/2026, yêu cầu hoàn ngày 12/10/2026, chưa kích hoạt. Tôi có được hoàn không?",
+    "trace": "20261007-192439_48dc7dc8_turn01_df9e0e3d.jsonl",
+    "answer": "Theo **Chính sách hoàn tiền từ tháng 10** (áp dụng cho các đơn hàng mua từ ngày 01/10/2026 trở đi):\n\n- **Bạn ĐƯỢC hoàn tiền** (và không mất phí hoàn tiền).\n\n**Lý do:**\n1. **Thời hạn:** Bạn yêu cầu hoàn tiền vào ngày 12/10/2026 (sau 10 ngày kể từ ngày mua 02/10/2026), nằm trong thời hạn quy định là **14 ngày**.\n2. **Trạng thái kích hoạt:** Sản phẩm **chưa kích hoạt**, thỏa mãn điều kiện hoàn tiền của chính sách."
+  }
+]

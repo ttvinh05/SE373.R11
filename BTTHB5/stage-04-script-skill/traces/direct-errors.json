@@ -1,0 +1,44 @@
+[
+  {
+    "arguments": [],
+    "exit_code": 2,
+    "stderr": "usage: check_csv.py [-h] --input INPUT --max-hours MAX_HOURS\ncheck_csv.py: error: the following arguments are required: --max-hours\n"
+  },
+  {
+    "arguments": [
+      "--max-hours",
+      "-1"
+    ],
+    "exit_code": 2,
+    "stderr": "usage: check_csv.py [-h] --input INPUT --max-hours MAX_HOURS\ncheck_csv.py: error: argument --max-hours: --max-hours phải là số hữu hạn không âm.\n"
+  },
+  {
+    "arguments": [
+      "--max-hours",
+      "nan"
+    ],
+    "exit_code": 2,
+    "stderr": "usage: check_csv.py [-h] --input INPUT --max-hours MAX_HOURS\ncheck_csv.py: error: argument --max-hours: --max-hours phải là số hữu hạn không âm.\n"
+  },
+  {
+    "arguments": [
+      "--max-hours",
+      "inf"
+    ],
+    "exit_code": 2,
+    "stderr": "usage: check_csv.py [-h] --input INPUT --max-hours MAX_HOURS\ncheck_csv.py: error: argument --max-hours: --max-hours phải là số hữu hạn không âm.\n"
+  },
+  {
+    "arguments": [
+      "--max-hours",
+      "abc"
+    ],
+    "exit_code": 2,
+    "stderr": "usage: check_csv.py [-h] --input INPUT --max-hours MAX_HOURS\ncheck_csv.py: error: argument --max-hours: --max-hours phải là số hữu hạn không âm.\n"
+  },
+  {
+    "input": "workspace/data/no-such-workload.csv",
+    "exit_code": 1,
+    "stderr": "ERROR: Không đọc được file workspace/data/no-such-workload.csv: No such file or directory\n"
+  }
+]

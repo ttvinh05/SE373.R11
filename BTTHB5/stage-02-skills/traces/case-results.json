@@ -1,0 +1,27 @@
+[
+  {
+    "case": "A",
+    "trace": "20261007-102823_0678646c_turn01_29e5c9ac.jsonl",
+    "answer": "Dưới đây là kết quả tra cứu chính sách hoàn tiền cho giao dịch của bạn:\n\n- **Chính sách áp dụng:** Chính sách hoàn tiền trước tháng 10 (áp dụng cho các đơn hàng có ngày mua trước ngày 01/10/2026). Do ngày mua của bạn là 28/09/2026 (trước 01/10/2026), chính sách này được áp dụng thay vì chính sách từ tháng 10.\n- **Số ngày đã qua:** 06/10/2026 − 28/09/2026 = 8 ngày lịch.\n- **Kết luận:** **Không đủ điều kiện** hoàn tiền. Mặc dù sản phẩm chưa kích hoạt, thời gian yêu cầu hoàn tiền (8 ngày) đã vượt quá thời hạn quy định (trong vòng 7 ngày kể từ ngày mua).\n- **Phí:** Không áp dụng (do không đủ điều kiện hoàn tiền).\n- **Căn cứ:** `data/policies/policy-before-oct.md`"
+  },
+  {
+    "case": "B",
+    "trace": "20261007-102841_0fa0d261_turn01_971bff0d.jsonl",
+    "answer": "Dựa trên thông tin bạn cung cấp và tài liệu chính sách, kết quả tra cứu như sau:\n\n- **Chính sách áp dụng:** Chính sách hoàn tiền từ tháng 10 (áp dụng cho các đơn hàng có ngày mua từ 2026-10-01 trở đi). Ngày mua của bạn là 02/10/2026 nên thuộc phạm vi hiệu lực của chính sách này.\n- **Số ngày đã qua:** 12/10/2026 − 02/10/2026 = 10 ngày lịch.\n- **Kết luận:** Bạn **đủ điều kiện** hoàn tiền vì yêu cầu hoàn tiền trong vòng 14 ngày kể từ ngày mua (10 ngày ≤ 14 ngày) và sản phẩm chưa kích hoạt.\n- **Phí:** Không thu phí hoàn tiền.\n- **Căn cứ:** `data/policies/policy-from-oct.md`"
+  },
+  {
+    "case": "A-renamed",
+    "trace": "20261007-102854_8786e384_turn01_96bd2190.jsonl",
+    "answer": "Dưới đây là kết quả tra cứu chính sách hoàn tiền cho giao dịch của bạn:\n\n- **Chính sách áp dụng:** Chính sách hoàn tiền trước tháng 10 (áp dụng cho các đơn hàng có ngày mua trước ngày 01/10/2026; ngày mua của bạn là 28/09/2026 nên áp dụng chính sách này).\n- **Số ngày đã qua:** 06/10/2026 − 28/09/2026 = 8 ngày lịch.\n- **Kết luận:** **Không đủ điều kiện** hoàn tiền. Mặc dù sản phẩm chưa kích hoạt, nhưng thời gian yêu cầu hoàn tiền (8 ngày) đã vượt quá thời hạn quy định (trong vòng 7 ngày kể từ ngày mua).\n- **Phí:** Không áp dụng.\n- **Căn cứ:** `data/policies/document-alpha.md`."
+  },
+  {
+    "case": "B-renamed",
+    "trace": "20261007-102912_17506577_turn01_b2fd2068.jsonl",
+    "answer": "Dưới đây là kết quả tra cứu điều kiện hoàn tiền cho yêu cầu của bạn:\n\n- **Chính sách áp dụng:** Chính sách hoàn tiền từ tháng 10 (áp dụng cho các đơn hàng có ngày mua từ ngày 01/10/2026, bao gồm ngày này). Do bạn mua ngày 02/10/2026 nên áp dụng chính sách này.\n- **Số ngày đã qua:** 12/10/2026 − 02/10/2026 = 10 ngày lịch.\n- **Kết luận:** **Đủ điều kiện hoàn tiền**. \n  - *Lý do:* Thời gian yêu cầu hoàn là 10 ngày (nằm trong thời hạn quy định 14 ngày) và sản phẩm chưa kích hoạt (đáp ứng điều kiện chưa kích hoạt).\n- **Phí:** Không thu phí hoàn tiền.\n- **Căn cứ:** `data/policies/document-beta.md`"
+  },
+  {
+    "case": "missing-activation",
+    "trace": "20261007-102928_1bae65a7_turn01_11f68c19.jsonl",
+    "answer": "Để có thể tra cứu và xác định chính xác điều kiện hoàn tiền cho bạn, vui lòng cung cấp thêm thông tin:\n\n- **Trạng thái kích hoạt:** Sản phẩm/dịch vụ của bạn đã được kích hoạt hay chưa kích hoạt?\n\nSau khi có thông tin này, tôi sẽ đối chiếu với chính sách hoàn tiền tương ứng để thông báo kết quả cụ thể cho bạn."
+  }
+]

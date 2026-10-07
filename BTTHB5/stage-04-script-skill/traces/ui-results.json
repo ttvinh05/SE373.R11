@@ -1,0 +1,10 @@
+[
+  {
+    "case": "UI-threshold-8",
+    "answer": "Đã kiểm tra file data/workload.csv với ngưỡng 8 giờ và tạo báo cáo thành công tại output/workload-ui.md.\n\nTóm tắt kết quả:\nNgười vượt ngưỡng (> 8 giờ): Lan với tổng 9.0 giờ hợp lệ.\nMinh: 3.0 giờ (không vượt ngưỡng).\nTình trạng dữ liệu:\nTổng số dòng dữ liệu: 6 dòng.\nSố dòng bị loại (3 dòng):\nDòng 5 (T04): Giờ không hợp lệ (invalid_hours).\nDòng 6 (T02): Trùng lặp mã công việc (duplicate_id).\nDòng 7 (T05): Thiếu người phụ trách (missing_owner)."
+  },
+  {
+    "case": "UI-missing-threshold-after-8",
+    "answer": "Bạn vui lòng cung cấp ngưỡng số giờ tối đa (một số không âm, ví dụ: 8 giờ, 10 giờ,...) để làm căn cứ xác định người quá tải?\n"
+  }
+]

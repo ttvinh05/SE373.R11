@@ -1,0 +1,36 @@
+[
+  {
+    "case": "A",
+    "trace": "20261007-184204_aa4522a2_turn01_2e72a1e4.jsonl",
+    "observed_result": "Chính sách trước tháng 10; 8 ngày; không đủ điều kiện; căn cứ data/policies/policy-before-oct.md.",
+    "source": "Đối chiếu nội dung hiển thị trong snapshot trình duyệt; trường này là tóm tắt kết quả quan sát."
+  },
+  {
+    "case": "B",
+    "question": "Tôi mua ngày 02/10/2026, yêu cầu hoàn ngày 12/10/2026, chưa kích hoạt. Tôi có được hoàn không?",
+    "answer": "Dưới đây là kết quả tra cứu chính sách hoàn tiền cho trường hợp của bạn:\n\nChính sách áp dụng: Chính sách hoàn tiền từ tháng 10 (áp dụng cho các đơn hàng có ngày mua từ 2026-10-01, bao gồm ngày này). Đơn hàng của bạn mua ngày 02/10/2026 nên thuộc phạm vi áp dụng của chính sách này.\nSố ngày đã qua: 12/10/2026 − 02/10/2026 = 10 ngày lịch.\nKết luận: Đủ điều kiện hoàn tiền. Bạn gửi yêu cầu vào ngày thứ 10 (vẫn trong thời hạn quy định 14 ngày kể từ ngày mua) và sản phẩm chưa kích hoạt.\nPhí: Không thu phí hoàn tiền (miễn phí).\nCăn cứ: data/policies/policy-from-oct.md.",
+    "source": "Nội dung hiển thị trên giao diện Streamlit, trích từ DOM sau khi hoàn tất.",
+    "trace": "20261007-184312_3631b9cf_turn01_0cd35766.jsonl"
+  },
+  {
+    "case": "A-renamed",
+    "question": "Tôi mua ngày 28/09/2026, yêu cầu hoàn ngày 06/10/2026, chưa kích hoạt. Tôi có được hoàn không?",
+    "answer": "Dưới đây là thông tin tra cứu chính sách hoàn tiền cho giao dịch của bạn:\n\nChính sách áp dụng: Chính sách hoàn tiền trước tháng 10 (áp dụng cho đơn hàng có ngày mua trước ngày 01/10/2026; giao dịch của bạn mua vào ngày 28/09/2026 nên áp dụng chính sách này).\nSố ngày đã qua: Ngày 06/10/2026 − ngày 28/09/2026 = 8 ngày lịch.\nKết luận: Không đủ điều kiện hoàn tiền. Mặc dù sản phẩm chưa kích hoạt, thời gian yêu cầu hoàn tiền (8 ngày) đã vượt quá thời hạn quy định là trong vòng 7 ngày kể từ ngày mua.\nPhí: Không áp dụng.\nCăn cứ: data/policies/document-alpha.md.",
+    "source": "Nội dung hiển thị trên giao diện Streamlit, trích từ DOM sau khi hoàn tất.",
+    "trace": "20261007-184414_d610d923_turn01_661860cf.jsonl"
+  },
+  {
+    "case": "B-renamed",
+    "question": "Tôi mua ngày 02/10/2026, yêu cầu hoàn ngày 12/10/2026, chưa kích hoạt. Tôi có được hoàn không?",
+    "answer": "Dựa trên thông tin bạn cung cấp và tài liệu chính sách của hệ thống, câu trả lời như sau:\n\nChính sách áp dụng: Chính sách hoàn tiền từ tháng 10 (áp dụng cho các đơn hàng có ngày mua từ 2026-10-01, bao gồm cả ngày này). Do ngày mua của bạn là 02/10/2026, chính sách này được áp dụng.\nSố ngày đã qua: 12/10/2026 − 02/10/2026 = 10 ngày lịch.\nKết luận: Đủ điều kiện hoàn tiền. Yêu cầu của bạn được gửi trong vòng 10 ngày (thời hạn quy định là tối đa 14 ngày kể từ ngày mua) và sản phẩm chưa được kích hoạt.\nPhí: Không thu phí hoàn tiền.\nCăn cứ: data/policies/document-beta.md",
+    "source": "Nội dung hiển thị trên giao diện Streamlit, trích từ DOM sau khi hoàn tất.",
+    "trace": "20261007-184516_9eb7c33a_turn01_8684d301.jsonl"
+  },
+  {
+    "case": "missing-activation",
+    "question": "Tôi mua ngày 02/10/2026, muốn hoàn ngày 12/10/2026.",
+    "answer": "Để tra cứu chính xác điều kiện hoàn tiền theo chính sách, bạn vui lòng cung cấp thêm thông tin:\n\nTrạng thái kích hoạt: Sản phẩm/dịch vụ của bạn đã được kích hoạt hay chưa kích hoạt?\n\nSau khi có đủ thông tin về trạng thái kích hoạt, tôi sẽ đối chiếu với chính sách áp dụng để xác định điều kiện hoàn tiền và mức phí cụ thể cho bạn.\n",
+    "source": "Nội dung hiển thị trên giao diện Streamlit, trích từ DOM sau khi hoàn tất.",
+    "trace": "20261007-184604_91d11d5a_turn01_58547c22.jsonl"
+  }
+]

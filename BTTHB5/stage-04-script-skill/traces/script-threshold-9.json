@@ -1,0 +1,63 @@
+{
+  "input": "workspace/data/workload.csv",
+  "max_hours": 9.0,
+  "hours_by_owner": {
+    "Lan": 9.0,
+    "Minh": 3.0
+  },
+  "overloaded_owners": [],
+  "excluded_rows": [
+    {
+      "line": 5,
+      "task_id": "T04",
+      "reasons": [
+        "invalid_hours"
+      ]
+    },
+    {
+      "line": 6,
+      "task_id": "T02",
+      "reasons": [
+        "duplicate_id"
+      ]
+    },
+    {
+      "line": 7,
+      "task_id": "T05",
+      "reasons": [
+        "missing_owner"
+      ]
+    }
+  ],
+  "row_count": 6,
+  "missing_owner_count": 1,
+  "invalid_hours_count": 1,
+  "duplicate_id_count": 1,
+  "duplicate_ids": [
+    "T02"
+  ],
+  "issues": [
+    {
+      "line": 5,
+      "column": "hours",
+      "type": "invalid_hours",
+      "task_id": "T04",
+      "value": "abc",
+      "message": "hours 'abc' không phải số hữu hạn không âm."
+    },
+    {
+      "line": 6,
+      "column": "task_id",
+      "type": "duplicate_id",
+      "task_id": "T02",
+      "message": "task_id T02 đã xuất hiện ở line 3."
+    },
+    {
+      "line": 7,
+      "column": "owner",
+      "type": "missing_owner",
+      "task_id": "T05",
+      "message": "owner trống."
+    }
+  ]
+}

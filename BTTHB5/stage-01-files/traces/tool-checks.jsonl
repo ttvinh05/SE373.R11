@@ -1,0 +1,5 @@
+{"path": "data/policies", "result": {"ok": true, "path": "data/policies", "entries": [{"name": "policy-before-oct.md", "path": "data/policies/policy-before-oct.md", "type": "file"}, {"name": "policy-from-oct.md", "path": "data/policies/policy-from-oct.md", "type": "file"}]}}
+{"path": "data/weekly_notes.md", "result": {"ok": false, "error": {"code": "NOT_A_DIRECTORY", "message": "Đây không phải thư mục: data/weekly_notes.md"}}}
+{"path": "data/no-such-directory", "result": {"ok": false, "error": {"code": "DIRECTORY_NOT_FOUND", "message": "Không tìm thấy thư mục: data/no-such-directory"}}}
+{"path": "../outside", "result": {"ok": false, "error": {"code": "PATH_OUTSIDE_WORKSPACE", "message": "Đường dẫn thoát ra ngoài workspace: ../outside"}}}
+{"path": "/tmp", "result": {"ok": false, "error": {"code": "PATH_OUTSIDE_WORKSPACE", "message": "Không chấp nhận đường dẫn tuyệt đối: /tmp. Dùng đường dẫn tương đối workspace."}}}
