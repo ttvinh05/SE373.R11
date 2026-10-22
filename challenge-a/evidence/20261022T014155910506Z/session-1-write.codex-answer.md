@@ -1,0 +1,1 @@
+Đã lưu quy ước: authentication dùng JWT.

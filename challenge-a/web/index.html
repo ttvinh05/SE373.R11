@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memory Lab · Challenge A</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Memory Lab, trang chính"><span class="mark">M</span> MEMORY LAB <span class="divider">/</span> <span class="course">SE373</span></a>
+    <div class="top-actions"><span id="connection" class="connection">Đang kiểm tra Codex…</span><button id="new-demo" class="quiet">Demo mới ↗</button></div>
+  </header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">CHALLENGE A · PERSISTENT MEMORY</p><h1>Nhớ quy ước qua từng phiên.</h1></div><p class="intro-copy">Lưu một quyết định, mở phiên mới và xem agent áp dụng lại.<br>Đổi quyết định để kiểm tra trí nhớ được cập nhật.</p></div>
+    <nav class="steps" aria-label="Các bước demo">
+      <button data-step="0" aria-current="step"><span>01</span> Ghi JWT</button>
+      <button data-step="1"><span>02</span> Hỏi lần 1</button>
+      <button data-step="2"><span>03</span> Đổi sang cookie</button>
+      <button data-step="3"><span>04</span> Hỏi lần 2</button>
+      <button data-step="4"><span>05</span> Đối chứng</button>
+    </nav>
+    <div class="demo-toolbar"><p id="step-hint" class="step-hint"></p><button id="run-demo" class="quiet">Chạy cả 5 bước tự động ↗</button></div>
+    <p id="error" class="error" role="alert" hidden></p>
+    <div class="workspace">
+      <section class="work-panel" aria-label="Thao tác demo">
+        <div class="panel-head"><span class="eyebrow">BÀN THỰC HÀNH</span><span class="local-tag">LOCAL</span></div>
+        <form id="ask-form">
+          <label for="question">Nói với agent</label>
+          <textarea id="question" rows="4" maxlength="4000" required></textarea>
+          <label class="checkbox" for="inject"><input id="inject" type="checkbox" checked> Cho phép nạp và dùng memory trong phiên mới</label>
+          <div class="form-foot"><p>Mỗi lần chuẩn bị là một phiên mới, không gửi chat cũ.</p><button type="submit" class="primary">1. Chuẩn bị context <span aria-hidden="true">→</span></button></div>
+        </form>
+        <section id="context-panel" class="context-panel" aria-labelledby="context-title" hidden>
+          <div class="context-head"><h2 id="context-title">Context của phiên mới</h2><span id="session-id" class="mono"></span></div>
+          <p id="context-caption" class="caption"></p>
+          <pre id="injected-memory"></pre>
+          <details><summary>Xem toàn bộ prompt sẽ gửi</summary><pre id="full-prompt"></pre></details>
+          <div class="send-row"><span>Agent chạy tối đa 6 bước. Mỗi bước dùng quota Codex đang đăng nhập.</span><button id="send" class="primary">2. Chạy agent ↗</button></div>
+        </section>
+        <div id="loading" class="loading" role="status" hidden><span class="spinner" aria-hidden="true"></span><div><strong id="run-status">Agent đang chạy…</strong><p>Model chọn tool → Python thực thi → model nhận kết quả và tiếp tục.</p></div></div>
+        <section id="trace-panel" class="context-panel" hidden aria-labelledby="trace-title"><h2 id="trace-title">Các bước của agent</h2><ol id="loop-trace" class="loop-trace" aria-live="polite"></ol></section>
+        <section class="answers-section" aria-labelledby="answers-title"><div class="answer-heading"><h2 id="answers-title">Câu trả lời của agent</h2><span id="answer-count">0 phiên</span></div><div id="empty-answer" class="empty-answer"><span aria-hidden="true">↳</span><p>Chưa gửi câu hỏi.<br><small>Chuẩn bị context, xem memory rồi gửi cho Codex.</small></p></div><div id="answers" aria-live="polite"></div></section>
+      </section>
+      <aside class="memory-panel" aria-labelledby="memory-title">
+        <div class="panel-head"><h2 id="memory-title">Persistent memory</h2><span id="memory-count" class="count">0</span></div>
+        <p class="caption">Dữ liệu trên ổ đĩa. Phiên mới chỉ nạp bản còn hiệu lực.</p>
+        <div class="memory-label"><span class="dot"></span> ĐANG HIỆU LỰC</div>
+        <div id="active-memory"></div>
+        <details id="history"><summary id="history-label">Đã thay thế (0)</summary><div id="old-memory"></div></details>
+        <details class="raw"><summary>Xem JSON đang lưu</summary><pre id="raw-memory"></pre></details>
+        <div class="memory-note"><span>MODEL → TOOL → KẾT QUẢ → MODEL</span><p>Agent tự chọn đọc hoặc ghi quy ước. Python thực thi tool và lưu file; phiên mới nạp bản còn hiệu lực.</p></div>
+        <details class="storage"><summary>Vị trí file &amp; bằng chứng</summary><p id="storage-path" class="mono"></p><p>Demo mới tạo thư mục riêng, giữ lại dữ liệu cũ.</p></details>
+      </aside>
+    </div>
+    <footer><span>Memory là thông tin được lưu. Context là thông tin model thực sự nhận.</span><span id="demo-id" class="mono"></span></footer>
+  </main>
+</body>
+</html>

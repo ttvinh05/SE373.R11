@@ -1,0 +1,36 @@
+[
+  {
+    "type": "model_action",
+    "step": 1,
+    "action": "remember_memory",
+    "key": "auth",
+    "value": "Authentication dùng JWT.",
+    "evidence": "Hãy nhớ quy ước dự án: authentication dùng JWT.",
+    "answer": ""
+  },
+  {
+    "type": "tool_result",
+    "step": 1,
+    "tool": "remember_memory",
+    "result": {
+      "ok": true,
+      "record": {
+        "id": "f1b543a8-768f-4276-b00d-75364af31911",
+        "key": "auth",
+        "value": "Authentication dùng JWT.",
+        "source_session": "session-1-write",
+        "created_at": "2026-10-22T01:42:09.141778+00:00",
+        "status": "active"
+      }
+    }
+  },
+  {
+    "type": "model_action",
+    "step": 2,
+    "action": "final",
+    "key": "",
+    "value": "",
+    "evidence": "",
+    "answer": "Đã lưu quy ước: authentication dùng JWT."
+  }
+]

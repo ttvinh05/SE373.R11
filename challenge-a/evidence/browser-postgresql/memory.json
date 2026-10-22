@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "6ae69e89-e033-4c9f-ad45-9511c3f88230",
+      "key": "database",
+      "value": "Database dùng PostgreSQL.",
+      "source_session": "session-63a96189",
+      "created_at": "2026-10-22T01:49:25.416241+00:00",
+      "status": "active"
+    }
+  ]
+}

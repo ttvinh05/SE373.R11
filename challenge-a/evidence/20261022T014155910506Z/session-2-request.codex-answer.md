@@ -1,0 +1,3 @@
+- Xây dựng endpoint đăng nhập, kiểm tra thông tin tài khoản bằng hàm xác minh mật khẩu băm.
+- Theo quy ước hiện hành, dùng JWT: cấp access token có thời hạn ngắn khi đăng nhập thành công và xác minh chữ ký, thời hạn ở các endpoint cần bảo vệ.
+- Dùng HTTPS, giới hạn số lần thử đăng nhập và không ghi mật khẩu hoặc token vào log.

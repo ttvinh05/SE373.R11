@@ -1,0 +1,1 @@
+Đã lưu quy ước: authentication dùng session cookie thay cho JWT cho các session sau.

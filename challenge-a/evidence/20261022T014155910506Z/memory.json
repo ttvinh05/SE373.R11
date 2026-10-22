@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "f1b543a8-768f-4276-b00d-75364af31911",
+      "key": "auth",
+      "value": "Authentication dùng JWT.",
+      "source_session": "session-1-write",
+      "created_at": "2026-10-22T01:42:09.141778+00:00",
+      "status": "superseded",
+      "superseded_by": "e6d72458-d184-4851-a01e-a4addc8948c1",
+      "superseded_at": "2026-10-22T01:43:09.270807+00:00"
+    },
+    {
+      "id": "e6d72458-d184-4851-a01e-a4addc8948c1",
+      "key": "auth",
+      "value": "Authentication dùng session cookie thay cho JWT.",
+      "source_session": "session-3-update",
+      "created_at": "2026-10-22T01:43:09.270807+00:00",
+      "status": "active"
+    }
+  ]
+}

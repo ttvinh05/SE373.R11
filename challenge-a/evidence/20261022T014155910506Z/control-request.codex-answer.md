@@ -1,0 +1,3 @@
+- Chưa biết quy ước xác thực của dự án. Bạn dùng stack nào và muốn đăng nhập bằng mật khẩu hay nhà cung cấp OAuth/OIDC?
+- Đề xuất dùng thư viện xác thực được duy trì, kiểm tra thông tin đăng nhập ở backend và giới hạn số lần thử.
+- Nếu là ứng dụng web, đề xuất lưu phiên bằng cookie HttpOnly, Secure, SameSite; có hết hạn phiên và thu hồi khi đăng xuất.

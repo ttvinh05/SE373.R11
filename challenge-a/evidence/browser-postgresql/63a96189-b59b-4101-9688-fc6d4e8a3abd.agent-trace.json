@@ -1,0 +1,36 @@
+[
+  {
+    "type": "model_action",
+    "step": 1,
+    "action": "remember_memory",
+    "key": "database",
+    "value": "Database dùng PostgreSQL.",
+    "evidence": "Hãy nhớ quy ước dự án: database dùng PostgreSQL.",
+    "answer": ""
+  },
+  {
+    "type": "tool_result",
+    "step": 1,
+    "tool": "remember_memory",
+    "result": {
+      "ok": true,
+      "record": {
+        "id": "6ae69e89-e033-4c9f-ad45-9511c3f88230",
+        "key": "database",
+        "value": "Database dùng PostgreSQL.",
+        "source_session": "session-63a96189",
+        "created_at": "2026-10-22T01:49:25.416241+00:00",
+        "status": "active"
+      }
+    }
+  },
+  {
+    "type": "model_action",
+    "step": 2,
+    "action": "final",
+    "key": "",
+    "value": "",
+    "evidence": "",
+    "answer": "Đã lưu quy ước dự án: database dùng PostgreSQL."
+  }
+]

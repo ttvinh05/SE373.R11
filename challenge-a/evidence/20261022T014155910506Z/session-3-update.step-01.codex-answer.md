@@ -1,0 +1,1 @@
+{"action":"remember_memory","key":"auth","value":"Authentication dùng session cookie thay cho JWT.","evidence":"Từ nay đổi quy ước authentication sang session cookie thay cho JWT. Hãy nhớ cho các session sau.","answer":""}

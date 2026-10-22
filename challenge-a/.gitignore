@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+data/
+*.zip
+/evidence/*
+!/evidence/20261022T014155910506Z/
+!/evidence/browser-postgresql/

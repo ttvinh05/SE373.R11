@@ -1,0 +1,1 @@
+{"action":"final","key":"","value":"","evidence":"","answer":"Đã lưu quy ước: authentication dùng JWT."}

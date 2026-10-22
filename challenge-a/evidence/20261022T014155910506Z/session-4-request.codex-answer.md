@@ -1,0 +1,3 @@
+- Dùng session cookie theo quy ước hiện hành; sau khi xác thực thành công, tạo session phía server và đổi session ID.
+- Cookie đặt HttpOnly, Secure và SameSite phù hợp; bảo vệ các yêu cầu thay đổi dữ liệu bằng cơ chế chống CSRF.
+- Lưu mật khẩu bằng hàm băm chuyên dụng, giới hạn số lần đăng nhập sai; hủy session khi đăng xuất và áp dụng thời hạn hết phiên.
