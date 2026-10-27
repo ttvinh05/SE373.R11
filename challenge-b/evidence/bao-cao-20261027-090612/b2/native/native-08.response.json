@@ -1,0 +1,23 @@
+{
+  "action": "final",
+  "filename": "",
+  "result": {
+    "files_scanned": 6,
+    "records_scanned": 360,
+    "error_counts": [
+      {
+        "group": "auth/REFRESH_RACE",
+        "count": 47
+      },
+      {
+        "group": "search/CACHE_MISS",
+        "count": 18
+      },
+      {
+        "group": "billing/DB_TIMEOUT",
+        "count": 9
+      }
+    ]
+  },
+  "answer": "Đã quét 6 file, 360 bản ghi; có 74 bản ghi ERROR. Ba nhóm nhiều nhất: 1) auth/REFRESH_RACE: 47; 2) search/CACHE_MISS: 18; 3) billing/DB_TIMEOUT: 9. Không tính INFO hoặc WARN."
+}

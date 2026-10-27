@@ -1,0 +1,18 @@
+{
+  "files_scanned": 6,
+  "records_scanned": 360,
+  "error_counts": [
+    {
+      "group": "auth/REFRESH_RACE",
+      "count": 47
+    },
+    {
+      "group": "billing/DB_TIMEOUT",
+      "count": 9
+    },
+    {
+      "group": "search/CACHE_MISS",
+      "count": 18
+    }
+  ]
+}

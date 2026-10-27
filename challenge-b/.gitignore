@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+/evidence/*
+!/evidence/bao-cao-20261027-090612/
+/data/
+.env
+.DS_Store

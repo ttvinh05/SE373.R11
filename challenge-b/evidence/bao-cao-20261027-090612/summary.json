@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "llm_executed": true,
+  "fixture": "synthetic investigation and logs",
+  "parts": [
+    "b1",
+    "b2"
+  ],
+  "seed": 17
+}

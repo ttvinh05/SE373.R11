@@ -1,0 +1,7 @@
+{
+  "issue_id": "ISSUE-17",
+  "failed_attempt_ids": ["TRY-01", "TRY-02"],
+  "next_action_id": "NEXT-03",
+  "constraint_ids": ["C-API", "C-DEPS"],
+  "answer": "Theo lịch sử giả lập, ISSUE-17 còn mở: test_refresh_concurrent thất bại khi hai request cùng refresh một token. TRY-01 tăng TTL từ 15 lên 60 phút nhưng vẫn thất bại. TRY-02 dùng exponential backoff cũng thất bại; hai request cùng đọc token chưa bị invalidate. NEXT-03 chưa thực hiện: kiểm tra critical section đọc/invalidate/rotate trong auth.py và session.py, thiết kế atomic lock rồi chạy lại test_refresh_concurrent. Ràng buộc bắt buộc: C-API giữ API tương thích ngược; C-DEPS không thêm dependency. ISSUE-09 đã được ghi nhận giải quyết bằng cách bỏ metric handler trùng. Đây là dữ liệu giả lập, không phải bằng chứng chạy test hay sửa code thực tế."
+}

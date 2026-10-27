@@ -1,0 +1,1 @@
+{"action":"read_log","filename":"worker-1.jsonl","result":{"files_scanned":0,"records_scanned":0,"error_counts":[]},"answer":""}

@@ -1,0 +1,10 @@
+counts = {}
+files = list_logs()
+records = 0
+for filename in files:
+    for event in read_log(filename):
+        records += 1
+        if event["level"] == "ERROR":
+            key = event["service"] + "/" + event["error_code"]
+            counts[key] = counts.get(key, 0) + 1
+emit({"files_scanned": len(files), "records_scanned": records, "counts": counts})
